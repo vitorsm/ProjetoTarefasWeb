@@ -61,12 +61,16 @@ app.value('urlBase', 'http://localhost:8080/')
 		};
 		
 		self.teste1 = function() {
-			alert("tesout");
+			alert("TEste 2");
 		};
 		
 		self.teste = function() {
-			alert("Teste");
+			alert("Teste 0");
 		};
+		
+		self.abreTela = function() {
+			alert("veio na tarefa: ");
+		}
 		
 		self.ocorreuErro = function() {
 //			alert("Erro ao se conector com o servidor.");
@@ -78,6 +82,15 @@ app.value('urlBase', 'http://localhost:8080/')
 		
 		self.activate();
 	});
+
+app.directive("click", function() {
+	return function(scope, element, attrs) {
+		element.bind("click", function() {
+			scope.boolChangeClass = !scope.boolChangeClass;
+			scope.$apply();
+		});
+	};
+});
 
 function umRouteConfig ( $routeProvider ) {
 	// console.log( $routeProvider );
@@ -132,9 +145,9 @@ function getObjById ( id, obj ) {
 	return null;
 }
 
-//function abreTarefa() {
-//	alert("veio");
+function abre() {
+	alert("veio");
 //	$id = '#1';
 //	$($id).css("opacity","1");
 //	$($id).css("width","100%");
-//}
+}

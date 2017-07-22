@@ -29,16 +29,12 @@
 				
 			</div>
 			
-			<div class="exibeFoto" ng-click="controller.teste()">
-				teste
-			</div>
-			
 			<div ng-repeat="tarefa in controller.tarefas">
-				<div class="listatarefas" ng-click="controller.abreTarefa()">
+				<div click class="listatarefas" ng-click="controller.abre()">
 					<div class="nometarefa">
 						{{tarefa.nome}}
 					</div>
-					<div class="foto" id="{{tarefa.codigo}}">
+					<div ng-show="tarefa.foto" class="foto"  ng-class="{'exibeFoto': boolChangeClass}" id="{{tarefa.codigo}}">
 						<img ng-src="data:image/JPEG;base64, {{tarefa.foto}}">
 					</div>
 					

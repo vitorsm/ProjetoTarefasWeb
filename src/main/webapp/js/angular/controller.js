@@ -7,8 +7,6 @@ app.value('urlBase', 'http://localhost:8080/')
 		self.tarefas = [];
 		self.exibeFoto = false;
 		
-		self.url = "http://s2.glbimg.com/75t0ep5hkLgj2rhlLqvhkJ5C_kM=/620x0/s.glbimg.com/jo/eg/f/original/2017/03/26/17438783_276703096103504_8974433572010065920_n.jpg";
-		
 		self.cadastraTarefa = function() {
 			var nome = $scope.serFeito;
 			self.tarefa = [];
@@ -62,18 +60,16 @@ app.value('urlBase', 'http://localhost:8080/')
 			})
 		};
 		
-		self.abreTarefa = function(tarefa) {
-			
-			$(tarefa.codigo).css("opacity","0");
-			$(tarefa.codigo).css("width","100%");
-		};
-		
-		self.teste = function() {
+		self.teste1 = function() {
 			alert("tesout");
 		};
 		
+		self.teste = function() {
+			alert("Teste");
+		};
+		
 		self.ocorreuErro = function() {
-//			alert("Erro ao se conector com o servidor.")
+//			alert("Erro ao se conector com o servidor.");
 		};
 		
 		self.activate = function() {
@@ -136,3 +132,9 @@ function getObjById ( id, obj ) {
 	return null;
 }
 
+//function abreTarefa() {
+//	alert("veio");
+//	$id = '#1';
+//	$($id).css("opacity","1");
+//	$($id).css("width","100%");
+//}

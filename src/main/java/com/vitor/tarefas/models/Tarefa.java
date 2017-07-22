@@ -36,8 +36,10 @@ public class Tarefa {
 	@Column(name = "StatusTarefa", nullable = false)
 	private int status;
 	
-	@Column(name = "Foto")
-	private byte[] foto;
+	@Column(name = "Foto", columnDefinition = "LONGBLOB")
+//	@Column(name = "Foto")
+//	private byte[] foto;
+	String foto;
 	
 	@Column(name = "Localizacao")
 	private String localizacao;
@@ -104,14 +106,20 @@ public class Tarefa {
 //	public void setObservacoes(String observacoes) {
 //		this.observacoes = observacoes;
 //	}
-	public byte[] getFoto() {
-		return foto;
-	}
-	public void setFoto(byte[] foto) {
-		this.foto = foto;
-	}
+//	public byte[] getFoto() {
+//		return foto;
+//	}
+//	public void setFoto(byte[] foto) {
+//		this.foto = foto;
+//	}
 	public String getLocalizacao() {
 		return localizacao;
+	}
+	public String getFoto() {
+		return foto;
+	}
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 	public void setLocalizacao(String localizacao) {
 		this.localizacao = localizacao;

@@ -157,18 +157,14 @@ public class TarefaTemp {
 		t.setLocalizacao(this.localizacao);
 		t.setNome(this.nome);
 		t.setStatus(this.status);
-		t.setFoto(convertToByte(this.foto));
+//		t.setFoto(convertToByte(this.foto));
+		t.setFoto(this.foto);
 		
 		return t;
 	}
 
 	public byte[] convertToByte(String str) {
-//		byte foto[] = new byte[str.length()];
-//		for (int i = 0; i < str.length(); i++) {
-//			foto[i] = Byte.parseByte("" + str.charAt(i));
-//		}
-		
-		return Base64.decodeBase64(str);
-//		return foto;
+		byte[] array = Base64.decodeBase64(str);		
+		return Base64.encodeBase64(array);
 	}
 }

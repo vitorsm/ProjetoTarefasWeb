@@ -25,41 +25,8 @@ import com.vitor.tarefas.models.TarefaTemp;
 import com.vitor.tarefas.models.Usuario;
 
 @RestController
-public class InicialController {
+public class RESTController {
 
-	@RequestMapping(value = "teste", method = RequestMethod.GET)
-	public String testePagina() {
-		Usuario usuario = new Usuario();
-		usuario.setNome("Vitor");
-		usuario.setSenha("senha");
-		usuario.setUserName("vitor");
-		
-		UsuarioDAO.cadastra(usuario);
-		
-		Tarefa t1 = new Tarefa();
-//		t1.setData(new Date(System.currentTimeMillis()));
-//		t1.setDataCriacao(new Date(System.currentTimeMillis()));
-		t1.setNome("Tarefa 1");
-//		t1.setObservacoes("Fazer a tarefa 1");
-		t1.setStatus(Tarefa.STATUS_PENDENTE);
-//		t1.setUsuarioCriou(usuario);
-//		t1.setUsuarioRealizou(usuario);
-		TarefaDAO.cadastra(t1);
-		
-		Tarefa t2 = new Tarefa();
-//		t2.setData(new Date(System.currentTimeMillis()));
-//		t2.setDataCriacao(new Date(System.currentTimeMillis()));
-		t2.setNome("Tarefa 2");
-//		t2.setObservacoes("Fazer a tarefa 2");
-		t2.setStatus(Tarefa.STATUS_CONCLUIDA);
-//		t2.setUsuarioCriou(usuario);
-//		t2.setUsuarioRealizou(usuario);
-		TarefaDAO.cadastra(t2);
-		
-		String teste = "<html><body>Usuario " + usuario.getCodigo() + " cadastrado</body></html>";
-		return teste;
-	}
-	
 	@RequestMapping(
 			value = "usuarios", 
 			method = RequestMethod.GET, 
@@ -75,7 +42,15 @@ public class InicialController {
 			method = RequestMethod.GET, 
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Collection<Tarefa>> getTarefas() {
-//		List<Usuario> usuarios = UsuarioDAO.getUsuarios("");
+//		List<Tarefa> teste = TarefaDAO.getTarefas(-1);
+//		
+//		byte[] foto = teste.get(0).getFoto();
+//		String str = "";
+//		for (int i = 0; i < foto.length; i++) {
+//			str += foto[i];
+//		}
+//		System.out.println("FOTO: " + str);
+		
 		Collection<Tarefa> tarefas = TarefaDAO.getTarefas(-1);
 		
 		return new ResponseEntity<Collection<Tarefa>>(tarefas, HttpStatus.OK);
@@ -113,17 +88,6 @@ public class InicialController {
 		
 		return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
 	}
-	
-//	@RequestMapping(
-//			value = "cadTarefa", 
-//			method = RequestMethod.POST,
-//			consumes = MediaType.APPLICATION_JSON_VALUE, 
-//			produces = MediaType.APPLICATION_JSON_VALUE)
-//	public ResponseEntity<Tarefa> cadastraTarefa(@RequestBody Tarefa tarefa) {
-//		TarefaDAO.cadastra(tarefa);
-//		
-//		return new ResponseEntity<Tarefa>(tarefa, HttpStatus.OK);
-//	}
 	
 	@RequestMapping(
 			value = "cadTarefa/{nome}", 
@@ -177,7 +141,14 @@ public class InicialController {
 //		}
 		
 		Tarefa tarefa = t.getTarefa();
-		System.out.println("Recebeu isoooooo: " + tarefa.toString());
+//		
+//		byte[] foto = tarefa.getFoto();
+//		String str = "";
+//		for (int i = 0; i < foto.length; i++) {
+//			str += foto[i];
+//		}
+//		System.out.println("FOTO: " + tarefa.getFoto());
+		
 		TarefaDAO.altera(tarefa);
 		
 		return new ResponseEntity<Tarefa>(tarefa, HttpStatus.OK);

@@ -10,6 +10,7 @@
 	
 	<body>
 		<nav id="informacoes" ng-controller = "Controller as controller">
+	
 			<form ng-submit="controller.cadastraTarefa()">
 				<input name="serFeito" ng-model="serFeito" id="serFeito" class="feito" placeholder="O que precisa ser feito?"><br>
 				<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
@@ -29,17 +30,16 @@
 			</div>
 			
 			<div class="exibeFoto" ng-click="controller.teste()">
-				
+				teste
 			</div>
 			
 			<div ng-repeat="tarefa in controller.tarefas">
-				<div class="listatarefas" ng-class="{'exibeFoto': !exibirForm}" ng-click="exibirForm = !exibirForm">
+				<div class="listatarefas" ng-click="controller.abreTarefa()">
 					<div class="nometarefa">
 						{{tarefa.nome}}
 					</div>
-					
-					<div class="foto" ng-class="{'exibeFoto': exibeF}" id="{{tarefa.codigo}}">
-						<img src="data:image/JPEG;base64, {{controller.tarefa.foto}}">
+					<div class="foto" id="{{tarefa.codigo}}">
+						<img ng-src="data:image/JPEG;base64, {{tarefa.foto}}">
 					</div>
 					
 					<div class="detalhestarefa" id="detalhestarefa1">

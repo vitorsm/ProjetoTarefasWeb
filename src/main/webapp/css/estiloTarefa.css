@@ -1,0 +1,231 @@
+@font-face{
+	font-family: 'ubuntu_nome';
+	src: url("../../fontes/Ubuntu-B.ttf");
+}
+@font-face{
+	font-family: 'ubuntu_menu';
+	src: url("../../fontes/Ubuntu-M.ttf");
+}
+@font-face{
+	font-family: 'ubuntu_regular';
+	src: url("../../fontes/Ubuntu-R.ttf");
+}
+
+{
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+ 
+body {
+	margin: 0px;
+	padding: 0px; 
+	background-color: #606060;
+}
+
+input.feito {
+	transition: .5s;
+	width: 30%;
+}
+@media (max-width: 567px) {
+	input.feito {
+		transition: .5s;
+		width: 90%;
+	}
+}
+input.feito:FOCUS {
+	transition: .5s;
+	width: 90%;
+}
+
+div.foto{
+	transition: 1s;
+	opacity: 0;
+	width: 0%;
+	display: block;
+	margin: auto;
+}
+
+div.exibeFoto{
+	transition: 1s;
+	opacity: 1;
+	width: 100%;
+	display: block;
+	margin: auto;
+}
+
+img{
+	width: 100%;
+}
+
+
+h1{
+	font-family: 'ubuntu_menu';
+	color: #EB6823;
+}
+
+input{
+	height: 40px;
+	padding: 10px;
+	color: #1C4592;
+	border: 1px solid #1C4592;
+	margin: 10px;
+}
+
+input:FOCUS{
+	background-color: #f9f9f9;
+	border: 2px solid gray;
+	box-shadow: 0px 0px 20px gray;
+}
+
+
+#informacoes{
+		-webkit-transition: .5s;
+	   -moz-transition: .5s;
+	    -ms-transition: .5s;
+	     -o-transition: .5s;
+	        transition: .5s;
+	text-align: center;
+	margin: auto;
+	width: 100%;
+	padding: 10px;
+	padding-top: 50px;
+	z-index: 0;
+	position: absolute;	
+}
+
+
+div.filtro{
+	border-bottom: 3px solid #EB6823;
+	color: #EB6823;
+	background-color:white;
+	text-align: center;
+	transition: 0.5s;
+	display: inline-block;
+	cursor: pointer;
+	font-family: 'ubuntu_regular';
+	padding: 8px;
+	margin: 0px;
+}
+
+div.filtroSelecionado{
+	border-bottom: 3px solid white;
+	color: white;
+	background-color:#EB6823;
+	text-align: center;
+	transition: 0.5s;
+	display: inline-block;
+	cursor: pointer;
+	font-family: 'ubuntu_regular';
+	padding: 8px;
+	background-color: white;
+	box-shadow: 0px 0px 5px gray;
+	margin: 0px;
+}
+
+/* Inicio configura��o tarefas */
+div.listatarefas{
+	border-bottom: 3px solid #EB6823;
+	color: #EB6823;
+	text-align: left;
+	transition: 0.5s;
+	display: inline-block;
+	cursor: pointer;
+	font-family: 'ubuntu_regular';
+	padding: 20px;
+	background-color: white;
+	box-shadow: 0px 0px 5px gray;
+	width: 350px;
+	margin: 10px;
+}
+div.listatarefas:HOVER {
+	background-color: #f9d3bf;	
+}
+div.listatarefas div.nometarefa {
+	border-bottom: 1px solid #EB6823;
+	font-size: 18pt;
+	font-family: 'ubuntu_nome';
+}
+div.listatarefas div.informacoestarefa {
+	font-size: 8pt;
+	margin: 10px;
+}
+div.listatarefas div.qtdNaoLidos {
+	text-align: center;
+	width: 25px;
+	height: 25px;
+	color: #f9d3bf;
+	background-color: #EB6823;
+	margin: -20px;
+	padding: 3px;
+	display: block;
+	float: right;
+}
+
+div.listatarefas div.detalhestarefa {
+	display: none;
+}
+
+div.listatarefasExibido{
+	cursor: inherit;
+	border-bottom: 3px solid #EB6823;
+	color: #EB6823;
+	text-align: left;
+	transition: 0.5s;
+	display: block;
+	font-family: 'ubuntu_regular';
+	padding: 20px;
+	background-color: white;
+	box-shadow: 0px 0px 5px gray;
+	width: 100%;
+	margin: 10px;
+}
+div.listatarefasExibido:HOVER {
+	background-color: white;
+}
+div.listatarefasExibido div.nometarefa {
+	border-bottom: 1px solid #EB6823;
+	font-size: 18pt;
+	font-family: 'ubuntu_nome';
+}
+div.listatarefasExibido div.informacoestarefa {
+	display: none;
+}
+div.listatarefasExibido div.qtdNaoLidos {
+	display: none;
+}
+div.listatarefasExibido div.detalhestarefa {
+	text-align: center;
+	margin-top: 50px;
+	display: block;
+}
+div.listatarefas div.fechartarefa {
+}
+div.fechartarefa {
+	font-family: 'ubuntu_nome';
+	cursor: pointer;
+	text-align: center;
+	width: 25px;
+	height: 25px;
+	color: #f9d3bf;
+	background-color: #EB6823;
+	margin: -20px;
+	padding: 3px;
+	display: block;
+	float: right;
+}
+
+
+@media (max-width: 567px) {
+	div.listatarefas{
+		width: 90%;
+	}
+	div.listatarefasExibido{
+		width: 90%;
+	}
+}
+/* Fim configura��o tarefas */
+
+
+

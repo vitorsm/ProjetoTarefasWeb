@@ -1,0 +1,55 @@
+
+<html ng-app="UserManage">
+	<head>
+		<title>Tarefas</title>
+		<meta name="viewport" content="width=device-width">
+		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+		<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/estiloTarefa.css"/>
+	</head>
+	
+	<body>
+		<nav id="informacoes" ng-controller = "Controller as controller">
+			<form ng-submit="controller.cadastraTarefa()">
+				<input name="serFeito" ng-model="serFeito" id="serFeito" class="feito" placeholder="O que precisa ser feito?"><br>
+				<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
+			</form>
+			
+			<div class="filtro" ng-click="controller.atualizaListaTodos()">
+				Todos
+			</div>
+			<div class="filtro" ng-click="controller.atualizaListaPend()">
+				Pendentes
+			</div>
+			<div class="filtro" ng-click="controller.atualizaListaConcluidos()">
+				Concluidas
+			</div>
+			<div ng-class="{'foto': exibeFoto}" ng-click="exibeFoto} = !exibeFoto}">
+				
+			</div>
+			
+			<div class="exibeFoto" ng-click="controller.teste()">
+				
+			</div>
+			
+			<div ng-repeat="tarefa in controller.tarefas">
+				<div class="listatarefas" ng-class="{'exibeFoto': !exibirForm}" ng-click="exibirForm = !exibirForm">
+					<div class="nometarefa">
+						{{tarefa.nome}}
+					</div>
+					
+					<div class="foto" ng-class="{'exibeFoto': exibeF}" id="{{tarefa.codigo}}">
+						<img src="data:image/JPEG;base64, {{controller.tarefa.foto}}">
+					</div>
+					
+					<div class="detalhestarefa" id="detalhestarefa1">
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<script type="text/javascript" src="js/angular/angular.js" ></script>
+		<script type="text/javascript" src="js/angular/angular-route.js" ></script>
+		<script type="text/javascript" src="js/angular/controller.js" ></script>
+	</body>
+</html>
